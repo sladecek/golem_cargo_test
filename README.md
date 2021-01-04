@@ -69,7 +69,8 @@ cd
 git clone https://github.com/sladecek/golem_cargo_test
 ```
 
-5 Add the script directory to the `PATH` environment variable.
+5 Add the script directory to the `PATH` environment variable and make a softlink from `golem_cargo_test.py` to `golem_cargo_test`.
+
 
 ## *Goth* test network
 
@@ -94,11 +95,20 @@ export YAGNA_API_URL=http://172.19.0.6:6000
 export GSB_URL=tcp://172.19.0.6:6010
 ```
 
-5 Add the script directory to the `PATH` environment variable.
+5 Add the script directory to the `PATH` environment variable and make a softlink from `golem_cargo_test.py` to `golem_cargo_test`.
 
 # Custom image
 
 If the project under test requires specific test data, or when the virtual machine configuration is not optimal, the user must prepare custom virtual machine using instructions at https://handbook.golem.network/requestor-tutorials/convert-a-docker-image-into-a-golem-image  and change the `image_hash` variable in the `golem_cargo_test` script.
+
+The software was tested on these projects that do not need custom image:
+
+https://github.com/RustCrypto/hashes
+
+and
+
+https://github.com/dusk-network/plonk
+
 
 # Running
 1 Go to the directory containing the project to be tested.
@@ -142,4 +152,4 @@ console. Combined log is saved as `test_result.txt` file.
 
 # Future Work
 
-1 Support for other languages, such as *c++* or *javascript* should be added.
+1 Support for other languages, such as *c++* or *python* should be added.
